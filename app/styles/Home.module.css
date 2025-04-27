@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #202020;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.depositAddress {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  word-break: break-all;
+  text-align: center;
+}
+
+.timer {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.addButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addButton:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.depositList {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.depositList li {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.colorSwatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.totalPot {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+```
+
+```css
+/* styles/Roulette.module.css */
+.rouletteContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.rouletteContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid red;
+  z-index: 9999;
+}
+
+.roulette {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid #202020;
+  overflow: hidden;
+  background: #333;
+  transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sliceLabel {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  transform-origin: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+.winner {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
